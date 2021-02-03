@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <unistd.h>
-/*
- * a str in the estadar error
+/**
+ * main - Entry point
+ *
+ * Return: Always 1 (Success)
  */
 int main(void)
 {
