@@ -8,14 +8,13 @@
 /* betty style doc for function main goes there */
 int main(void)
 {
-	char text[] = "abcdefghijklmnopqrstuvwxyz";
+	int i = 97;
 
-	int i = 0;
-
-	for (i; i < 27; i++)
+	while (i < 124)
 	{
-		putchar(text[i]);
+		putchar(i);
+		i++;
 	}
-	putchar("\n");
+	putchar(10);
 	return (0);
 }
