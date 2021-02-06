@@ -10,10 +10,10 @@ int main(void)
 {
 	int a, b;
 	int s = 48;
-	
+
 	for (b = 0; b < 100; b++)
 	{
-		for (a=0; a<100; a++)
+		for (a = 0; a < 100; a++)
 		{
 			if (a > b)
 			{
