@@ -18,7 +18,7 @@ int main(void)
 			putchar(a / 100 + s);
 			putchar(((a / 10) % 10) + s);
 			putchar(a % 10 + s);
-		
+
 			if (a < 789)
 			{
 				putchar(',');
