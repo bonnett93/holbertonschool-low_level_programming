@@ -16,7 +16,6 @@ void times_table(void)
 			m = f * c;
 			if (m < 10)
 			{
-				_putchar(' ');
 				_putchar(m + 48);
 			}
 			else
@@ -24,10 +23,17 @@ void times_table(void)
 				_putchar((m / 10) + 48);
 				_putchar((m % 10) + 48);
 			}
-			if (c < 9)
+
+			if (c < 9 && m < 10)
 			{
 			_putchar(',');
 			_putchar(' ');
+			_putchar(' ');
+			}
+			else if (c < 9)
+			{
+				_putchar(',');
+				_putchar(' ');
 			}
 		}
 		 _putchar('\n');
