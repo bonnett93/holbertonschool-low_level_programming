@@ -8,11 +8,11 @@ void print_alphabet_x10(void)
 	int c;
 	int a;
 
-	for (a=0; a<11; a++)
+	for (a = 0; a < 11; a++)
 	{
 		c = 97;
-		
-	while (c < 123)
+
+		while (c < 123)
 		{
 			_putchar(c);
 			c++;
