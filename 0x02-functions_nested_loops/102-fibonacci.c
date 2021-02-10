@@ -6,11 +6,12 @@
 */
 int main(void)
 {
-	int m = 1;
-	int n = 2;
-	unsigned long int i, x;
+	int i;
+	long int m = 1;
+	long int n = 2;
+	unsigned long int x;
 
-	printf("1, 2,\n");
+	printf("1, 2, ");
 	for (i = 0; i < 48; i++)
 	{
 		x = m + n;
