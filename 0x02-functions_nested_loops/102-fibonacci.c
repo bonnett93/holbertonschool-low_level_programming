@@ -10,7 +10,7 @@ int main(void)
 	int n = 2;
 	unsigned long int i, x;
 
-	printf("1, 2, ");
+	printf("1, 2,\n");
 	for (i = 0; i < 48; i++)
 	{
 		x = m + n;
