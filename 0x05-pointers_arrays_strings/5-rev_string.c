@@ -17,7 +17,7 @@ void rev_string(char *s)
 	{
 		c++;
 	}
-	for (i = 0; i < (c + 1) / 2; i++)
+	for (i = 0; i <= c - 1; i++)
 	{
 		z = *(s + i);
 		*(s + i) = *(s + c - 1);
