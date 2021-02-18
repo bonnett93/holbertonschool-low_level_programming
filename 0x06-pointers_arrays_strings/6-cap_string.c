@@ -16,7 +16,7 @@ char *cap_string(char *str)
 	{
 		for (j = 0; sep[j]; j++)
 		{
-			if (str[i] == sep[j])
+			if (str[i] == sep[j] && str[i + 1] != '\0')
 			{
 				if (str[i + 1] >= 97 && str[i + 1] <= 122)
 				{
@@ -24,10 +24,6 @@ char *cap_string(char *str)
 				}
 				break;
 			}
-		}
-		if (str[i + 1] == '\t')
-		{
-			str[i + 1] = ' ';
 		}
 	}
 	return (str);
