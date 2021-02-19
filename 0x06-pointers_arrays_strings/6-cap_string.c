@@ -11,7 +11,11 @@ char *cap_string(char *str)
 {
 	int i, j;
 	char *sep = " \t\n,;.!?\"(){}}";
-
+	
+	if (str[0] >= 97 && str[0] <= 122)
+	{
+		str[0] = str[0] - 32;
+	}
 	for (i = 0; str[i]; i++)
 	{
 		for (j = 0; sep[j]; j++)
