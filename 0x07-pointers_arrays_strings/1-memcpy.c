@@ -1,7 +1,7 @@
 #include <unistd.h>
 
 /**
- * *_mecpy - Copies memory area.
+ * *_memcpy - Copies memory area.
  * @dest: A pointer to the block of memory to copy in.
  * @src: A pointer to the block of memory to copy.
  * @n: Size of the memory block to copy.
