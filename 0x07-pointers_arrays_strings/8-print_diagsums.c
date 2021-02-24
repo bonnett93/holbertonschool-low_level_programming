@@ -10,19 +10,28 @@
  */
 void print_diagsums(int *a, int size)
 {
-	int i, dig1, dig2;
+	int sumDiagonalOne = 0;
+	int sumDiagonalTwo = 0;
+	int i = 0;
+	int j = 0;
+	int k = 0;
 
-	dig1 = 0, dig2 = 0;
+	for (; i < size; i++)
+	{
+		for (j = 0; j < size; j++)
+		{
+			if (i == j)
+			{
+				sumDiagonalOne += a[k];
+			}
 
-	for (i = 0; i < size * size; i += size + 1)
-	{
-		dig1 += a[i];
+			if ((i + j) == size - 1)
+			{
+				sumDiagonalTwo += a[k];
+			}
+			k++;
+		}
 	}
-	i -= size * 2;
-	for (; i >= 0; i -= size - 1)
-	{
-		dig2 += a[i];
-	}
-	printf("%d, ", dig1);
-	printf("%d\n", dig2);
+	printf("%d, ", sumDiagonalOne);
+	printf("%d\n", sumDiagonalTwo);
 }
