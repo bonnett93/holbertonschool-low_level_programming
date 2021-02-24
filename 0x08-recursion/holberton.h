@@ -19,6 +19,8 @@ int _sqrt_decrement(int, int);
 
 int is_prime_number(int n);
 
+int _prime_recursion(int, int);
+
 int is_palindrome(char *s);
 
 #endif
