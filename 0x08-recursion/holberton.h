@@ -23,4 +23,8 @@ int _prime_recursion(int, int);
 
 int is_palindrome(char *s);
 
+int comp_chr(char *s, int c);
+
+int counter(char *s);
+
 #endif
