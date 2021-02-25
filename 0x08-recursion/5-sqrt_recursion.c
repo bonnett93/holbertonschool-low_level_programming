@@ -14,25 +14,23 @@ int _sqrt_recursion(int n)
 	else if (n == 0)
 		return (0);
 	else
-		return (_sqrt_decrement(n, n - 1));
+		return (_sqrt_increment(n, 1));
 }
 
 /**
-* _sqrt_decrement - give the sqrt of n
+* _sqrt_increment - give the sqrt of n
 * @n: number to calculate the sqrt
-* @x: number to decrement
+* @x: number to increment
 *
 * Return: integer
 */
 
-int _sqrt_decrement(int n, int x)
+int _sqrt_increment(int n, int x)
 {
-	if (n * n == n)
-		return (n);
-	else if (x * x == n)
+	if (x * x == n)
 		return (x);
-	else if (x < 0)
+	else if (x * x > n)
 		return (-1);
 	else
-		return (_sqrt_decrement(n, x - 1));
+		return (_sqrt_increment(n, x + 1));
 }
