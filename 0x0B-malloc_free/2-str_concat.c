@@ -3,7 +3,7 @@
 /**
  * *str_concat - Concatenate 2 strings.
  * @s1: First string
- * @s1: Second string
+ * @s22: Second string
  *
  * Return: Ponter to array
  */
