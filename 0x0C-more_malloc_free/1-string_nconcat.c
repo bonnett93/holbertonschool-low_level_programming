@@ -2,9 +2,9 @@
 
 /**
  * *string_nconcat - concatenates two strings
- * @s1: The character to print
- * @s2:
- * @n:
+ * @s1: The base string.
+ * @s2: The second string.
+ * @n: The first n bytes of s2 to be concatenate
  *
  * Return: pointer to a newly allocated space in memory,
  * On error, NULL.
@@ -15,9 +15,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	int len1 = 0, len2 = 0;
 	unsigned int i, j;
 
-	if (s1 == NULL)
+	if (s1 == 0)
 		s1 = "";
-	if (s2 == NULL)
+	if (s2 == 0)
 		s2 = "";
 
 	for (i = 0; s1[i]; i++)
@@ -26,9 +26,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		len2++;
 
 	ptr = malloc(sizeof(char) * len1 + len2 + 1);
-	if (ptr == NULL)
+	if (ptr == 0)
 	{
-		return(NULL);
+		return (0);
 	}
 
 	for (i = 0; s1[i]; i++)
