@@ -20,9 +20,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog = malloc(sizeof(dog_t));
 	if (dog != 0 && name != 0 && owner != 0)
 	{
-		for (i = 0; name[i]; i++);
-		for (j = 0; owner[j]; j++);
-
+		for (i = 0; name[i]; i++)
+			continue;
+		for (j = 0; owner[j]; j++)
+			continue;
 		dog->name = cp_str(name, i);
 		if (dog->name == 0)
 			return (0);
@@ -36,10 +37,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 }
 
 /**
- * cp_str - return a alloc memory with str copy
- * 
- * @str: The string to copy
- * @len: length of the string
+ * cp_str - return a copy
+ * @str: string
+¨* @len: length
+ * Return: char
 */
 char *cp_str(char *str, int len)
 {
