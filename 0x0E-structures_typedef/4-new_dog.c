@@ -1,6 +1,6 @@
 #include "dog.h"
 #include <stdlib.h>
-#include <stdio.h>
+
 char *cp_str(char *str, int len);
 
 /**
@@ -24,14 +24,14 @@ dog_t *new_dog(char *name, float age, char *owner)
 			continue;
 		for (j = 0; owner[j]; j++)
 			continue;
-		dog->name = cp_str(name, i+1);
+		dog->name = cp_str(name, i + 1);
 		if (dog->name == 0)
 		{
 			free(dog);
 			return (0);
 		}
 		dog->age = age;
-		dog->owner = cp_str(owner, j+1);
+		dog->owner = cp_str(owner, j + 1);
 		if (dog->owner == 0)
 		{
 			free(dog->name);
