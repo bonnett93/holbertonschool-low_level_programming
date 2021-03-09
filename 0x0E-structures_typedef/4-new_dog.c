@@ -1,7 +1,7 @@
 #include "dog.h"
 #include <stdlib.h>
 
-char *cp_str(char *str, int len);
+char *cp_str(char str, int len);
 
 /**
 * *new_dog -  creates a new dog.
@@ -51,7 +51,7 @@ char *cp_str(char *str, int len)
 	if (new_str == 0)
 		return (0);
 
-	for (i = 0; i < len; i++)
+	for (i = 0; i <= len; i++)
 		new_str[i] = str[i];
 	return (new_str);
 }
