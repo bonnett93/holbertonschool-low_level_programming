@@ -28,7 +28,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		if (dog->name == 0)
 		{
 			free(dog);
-			return (0);	
+			return (0);
 		}
 		dog->age = age;
 		dog->owner = cp_str(owner, j);
