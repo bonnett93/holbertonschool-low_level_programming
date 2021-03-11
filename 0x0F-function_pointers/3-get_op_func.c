@@ -3,8 +3,6 @@
 /**
  * get_op_func - selects the correct function to perform the operation
  * @s: the number of arg passed
- * @a: first number
- * @b: second number
  *
  * Return: pointer to the function that corresponds.
 */
