@@ -13,7 +13,7 @@ void print_all(const char * const format, ...)
 	char *str;
 
 	va_start(ap, format);
-	while (format[i])
+	while (format[i] && format != NULL)
 	{
 		encontro = 0;
 		switch (format[i])
