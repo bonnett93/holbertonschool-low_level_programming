@@ -12,7 +12,7 @@ void print_all(const char * const format, ...)
 	int encontro = 0, i = 0;
 	char *str;
 
-	if (formar == NULL)
+	if (format == NULL)
 	{
 		printf("\n");
 		return;
