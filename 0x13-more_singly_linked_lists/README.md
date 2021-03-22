@@ -8,6 +8,13 @@ This directory contains the task answer for the proyect "0x13. C - More singly l
 
 This file contains all prototypes of functions bellow, and the structure needed to creates the nodes, the structure is definited as: typedef struct listint_s listint_t;
 
+		typedef struct listint_s
+		{
+   			int n;
+    		struct listint_s *next;
+		} listint_t;
+
+
 - 0-print_listint.c
 
 	This file contains the function that prints all the elements of a listint_t list.
@@ -92,7 +99,7 @@ This file contains all prototypes of functions bellow, and the structure needed 
 	where idx is the index of the list where the new node should be added. Index starts at 0
 
 		Returns: the address of the new node, or NULL if it failed
-	
+
 	if it is not possible to add the new node at index idx, do not add the new node and return NULL
 
 - 10-delete_nodeint.c
