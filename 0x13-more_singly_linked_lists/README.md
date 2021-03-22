@@ -12,9 +12,9 @@ This file contains all prototypes of functions bellow, and the structure needed 
 
 	This file contains the function that prints all the elements of a listint_t list.
 
-	Prototype: size_t print_listint(const listint_t *h);
+		Prototype: size_t print_listint(const listint_t *h);
 
-	Return: the number of nodes
+		Return: the number of nodes
 
 
 - 1-listint_len.c
