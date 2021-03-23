@@ -15,10 +15,6 @@ int pop_listint(listint_t **head)
 	if (head == NULL || *head == NULL)
 		return (0);
 
-	if (tmp->n == NULL)
-		free(tmp);
-		return (0);
-
 	data = tmp->n;
 	free(tmp);
 
