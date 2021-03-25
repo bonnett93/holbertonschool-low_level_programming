@@ -39,7 +39,7 @@ This file is the header that contains all prototypes of functions bellow.
 
 	This file contains the function that sets the value of a bit to 1 at a given index.
 
-		Prototype: int set_bit(unsigned long int *n, unsign	ed int index);
+		Prototype: int set_bit(unsigned long int *n, unsigned int index);
 
 		Returns: 1 if it worked, or -1 if an error occurred.
 
