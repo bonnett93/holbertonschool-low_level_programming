@@ -1,6 +1,5 @@
 #include "holberton.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 /**
  * print_binary -  prints the binary representation of a number.
@@ -25,12 +24,10 @@ void print_binary(unsigned long int n)
 	}
 
 	i--;
-	printf("i: %lu\n", i);
 
 	while (i > 0)
 	{
 		_putchar(((n & (mask << i)) >> i) + '0');
-		/**printf("ul: %lu\n", mask << i);*/
 		i--;
 	}
 
