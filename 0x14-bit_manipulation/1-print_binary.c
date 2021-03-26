@@ -9,15 +9,24 @@
 
 void print_binary(unsigned long int n)
 {
+	unsigned int i = 0, tmp = n;
+
 	if (n == 0)
 	{
 		_putchar(48);
 		return;
 	}
 
-	while (n > 0)
+	while (tmp)
 	{
-		_putchar((n & 1) + '0');
-		n = n >> 1;
+		tmp = tmp >> 1;
+		i++;
 	}
+	i--;
+	while (i > 0)
+	{
+		_putchar(((n & 1 << i) >> i) + '0');
+		i--;
+	}
+	_putchar(((n & 1 << i) >> i) + '0');
 }
