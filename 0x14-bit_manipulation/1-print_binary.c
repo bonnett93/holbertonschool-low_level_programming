@@ -9,8 +9,7 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned long int tmp = n;
-	int i = 0;
+	unsigned long int tmp = n, i = 0;
 
 	if (n == 0)
 	{
@@ -25,9 +24,11 @@ void print_binary(unsigned long int n)
 	}
 
 	i--;
-	while (i >= 0)
+	while (i > 0)
 	{
 		_putchar(((n & 1 << i) >> i) + '0');
 		i--;
 	}
+
+	_putchar(((n & 1 << i) >> i) + '0');
 }
