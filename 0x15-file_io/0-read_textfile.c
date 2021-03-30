@@ -16,7 +16,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	char buffer[1048];
 	ssize_t bytes_read, bytes_write;
 
-	if (!filename)
+	if (!filename || filename[0] == 0)
 		return (0);
 
 	fd = open(filename, O_RDONLY);
@@ -26,9 +26,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 
 	bytes_read = read(fd, buffer, letters);
+	close(fd);
 	if (bytes_read == -1)
 		return (0);
-	close(fd);
+
 	bytes_write = write(1, buffer, bytes_read);
 	if (bytes_read != bytes_write)
 		return (0);
