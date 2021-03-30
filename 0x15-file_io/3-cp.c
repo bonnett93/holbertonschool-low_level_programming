@@ -15,7 +15,8 @@
 
 int main(int argc, char **argv)
 {
-	int fd1, fd2, byte_read, byte_write, buffer[1048], close_1, close_2;
+	int fd1, fd2, byte_read, byte_write, close_1, close_2;
+	char buffer[3000];
 
 	if (argc != 3)
 	{
