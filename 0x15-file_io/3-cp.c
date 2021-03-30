@@ -16,7 +16,7 @@
 int main(int argc, char **argv)
 {
 	int fd1, fd2, byte_read, byte_write, close_1, close_2;
-	char buffer[3000];
+	char buffer[1024];
 
 	if (argc != 3)
 	{
@@ -24,14 +24,14 @@ int main(int argc, char **argv)
 		exit(97);
 	}
 	fd1 = open(argv[1], O_RDONLY);
-	byte_read = read(fd1, buffer, 3000);
+	fd2 = open(argv[2], O_CREAT | O_TRUNC | O_RDWR, 0664);
+	while(byte_read = read(fd1, buffer, 1024) > 0)
+		byte_write = write(fd2, buffer, byte_read);
 	if (fd1 == -1 || byte_read == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	fd2 = open(argv[2], O_CREAT | O_TRUNC | O_RDWR,0664);
-	byte_write = write(fd2, buffer, byte_read);
 	if (fd2 == -1 || byte_write == -1)
 	{
 		dprintf(2, "Error: Can't write to %s\n", argv[2]);
@@ -49,6 +49,5 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd2);
 		exit(100);
 	}
-
 	return (0);
 }
