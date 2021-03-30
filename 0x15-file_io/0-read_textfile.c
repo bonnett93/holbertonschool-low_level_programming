@@ -29,10 +29,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (bytes_read == -1)
 		return (0);
 	close(fd);
-	buffer[letters] = '\0';
 	bytes_write = write(1, buffer, bytes_read);
-	if (bytes_read != bytes_write)
-		return (0);
-
 	return (bytes_read);
 }
