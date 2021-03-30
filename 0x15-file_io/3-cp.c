@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 		exit(97);
 	}
 	fd1 = open(argv[1], O_RDONLY);
-	fd2 = open(argv[2], O_CREAT | O_TRUNC | O_RDWR, 0664);
+	fd2 = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	while ((byte_read = read(fd1, buffer, 1024)) > 0)
 		byte_write = write(fd2, buffer, byte_read);
 	if (fd1 == -1 || byte_read == -1)
