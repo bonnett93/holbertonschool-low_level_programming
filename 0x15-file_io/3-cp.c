@@ -30,22 +30,12 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	
-	fd2 = open(argv[2], O_RDWR | O_CREAT | O_EXCL, 0664);
-	if (fd2 == -1)
-	{
-		fd2 = open(argv[2], O_RDWR | O_TRUNC);
-	}
+	fd2 = open(argv[2], O_CREAT | O_TRUNC | O_RDWR, 0664);
 	byte_write = write(fd2, buffer, byte_read);
 	if (fd2 == -1 || byte_write == -1)
 	{
 		dprintf(2, "Error: Can't write to %s\n", argv[2]);
-	}
-	close_2 = close(fd2);
-	if (close_2 == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd2);
-		exit(100);
+		exit(99);
 	}
 	close_1 = close(fd1);
 	if (close_1 == -1)
@@ -53,5 +43,12 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd1);
 		exit(100);
 	}
+	close_2 = close(fd2);
+	if (close_2 == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd2);
+		exit(100);
+	}
+
 	return (0);
 }
