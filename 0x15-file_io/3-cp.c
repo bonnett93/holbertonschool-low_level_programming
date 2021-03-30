@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 		exit(97);
 	}
 	fd1 = open(argv[1], O_RDONLY);
-	byte_read = read(fd1, buffer, 1048);
+	byte_read = read(fd1, buffer, 3000);
 	if (fd1 == -1 || byte_read == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
