@@ -33,5 +33,5 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (bytes_read != bytes_write)
 		return (0);
 
-	return (bytes_read);
+	return (bytes_write);
 }
