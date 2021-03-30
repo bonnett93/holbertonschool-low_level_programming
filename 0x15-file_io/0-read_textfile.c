@@ -16,7 +16,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int buffer[2148];
 	ssize_t bytes_read, bytes_write;
 
-	if (!filename || filename[0] == 0)
+	if (!filename || filename[0] == 0 || letters == 0)
 		return (0);
 
 	fd = open(filename, O_RDONLY);
