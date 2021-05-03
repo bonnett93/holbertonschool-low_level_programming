@@ -14,35 +14,53 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	if (h == NULL || (*h == NULL && idx > 0))
 		return (NULL);
-
 	new = malloc(sizeof(dlistint_t));
 	if (new == NULL)
 		return (NULL);
 	new->n = n;
-
 	if (*h == NULL)
 	{
 		*h = new;
 		return (new);
 	}
-
 	tmp = *h;
-	while (counter < idx)
+	while (counter < idx && tmp->next != NULL)
 	{
 		tmp = tmp->next;
-		if (tmp == NULL && idx != counter + 1)
-		{
-			free(new);
-			return (NULL);
-		}
 		counter++;
 	}
-	new->next = tmp;
-	new->prev = tmp->prev;
-	if (idx == 0)
-		*h = new;
-	else
-		tmp->prev->next = new;
-	tmp->prev = new;
+	if (counter + 1 < idx)
+	{
+		free(new);
+		return (NULL);
+	}
+	nodes(&new, tmp, h, counter, idx);
 	return (new);
+}
+
+/**
+ * nodes - put each value in correct node.
+ * @new: New node.
+ * @tmp: temporary node.
+ * @h: head to dlinkedin list
+ * @c: Counter.
+ * @i: index.
+ */
+void nodes(dlistint_t **new, dlistint_t *tmp, dlistint_t **h, int c, int i)
+{
+	if (c + 1 == i)
+	{
+		tmp->next = *new;
+		(*new)->prev = tmp;
+	}
+	else
+	{
+		if (i == 0)
+			*h = *new;
+		(*new)->next = tmp;
+		(*new)->prev = tmp->prev;
+		tmp->prev = *new;
+		if (i > 0)
+			(*new)->prev->next = *new;
+	}
 }
