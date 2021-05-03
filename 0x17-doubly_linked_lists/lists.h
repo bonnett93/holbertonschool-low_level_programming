@@ -40,4 +40,7 @@ int sum_dlistint(dlistint_t *head);
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n);
 
 void nodes(dlistint_t **new, dlistint_t *tmp, dlistint_t **h, int c, int i);
+
+int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);
+
 #endif
