@@ -27,7 +27,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 		tmp = tmp->next;
 	}
-	control = add(&ht->array[index], key, value);
+	control = add_node(&ht->array[index], key, value);
 	return (control);
 }
 
