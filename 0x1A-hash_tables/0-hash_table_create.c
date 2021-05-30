@@ -14,5 +14,8 @@ hash_table_t *hash_table_create(unsigned long int size)
 
 	table->size = size;
 	table->array = malloc(size * 8);
+	if (table->array == NULL)
+		return (NULL);
+
 	return (table);
 }
