@@ -2,14 +2,17 @@
 /**
  * hash_table_create - Create a hash table
  * @size: The size of the array
+ * Return: Pointer to new table or NULL if failed
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
-	hash_table_t* table;
+	hash_table_t *table;
 
-	table = malloc(size * 8);
+	table = malloc(sizeof(hash_table_t));
 	if (table == NULL)
-		return NULL;
+		return (NULL);
 
-	return table;
+	table->size = size;
+	table->array = malloc(size * 8);
+	return (table);
 }
