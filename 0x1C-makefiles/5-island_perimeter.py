@@ -1,8 +1,11 @@
 #!/usr/bin/python3
 """Module: Island Perimeter"""
 
+
 def island_perimeter(grid):
-    """returns the perimeter of the island described in grid"""
+    """
+    Returns the perimeter of the island described in grid
+    """
     perimeter = 0
     for r in range(len(grid)):
         for c in range(len(grid[r])):
